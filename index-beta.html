@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" id="dynamic-favicon" href="https://cdn.glitch.global/289a211a-7dfc-402c-b788-4bc4da318d2d/Icono_ErikStudios-removebg-preview.png?v=1733433454883">
+    <title>Erik - Bienvenidos</title>
+    <link rel="stylesheet" href="styles.css">
+  <style>
+         .perfil {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative; /* Para posicionar el menú desplegable */
+        }
+
+        /* Estilo del ícono de usuario */
+        .perfil img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilo del menú desplegable */
+        .menu-opciones {
+            display: none;
+            position: right;
+            top: 50px;
+            right: 0;
+            background-color: #ADD8E6;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 10px;
+            margin-top: 10px;
+            z-index: 1;
+        }
+
+        .menu-opciones li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .menu-opciones li:hover {
+            background-color: 	#B0E0E6;
+        }
+       h2 {
+      color: #0077ff;
+    }
+    .pdf-link {
+      display: block;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .pdf-link a {
+      text-decoration: none;
+      background-color: #0077ff;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .pdf-link a:hover {
+      background-color: #005fcc;
+    }
+      .abajo {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .abajo header {
+      background-color: #0077ff;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+      margin-top: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn.glitch.global/289a211a-7dfc-402c-b788-4bc4da318d2d/Icono_ErikStudios-removebg-preview.png?v=1733433454883" alt="Logo de Erik">
+            <h1>Erik</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="about.html">Quiénes somos</a></li>
+                   <button class="iniciar-sesion" id="iniciarSesionBtn">Iniciar sesión</button>
+          <div class="perfil" id="perfilUsuario" style="display:none;">
+            <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Icono de usuario">
+            <span id="nombreUsuario"></span>
+
+            <!-- Menú desplegable (aparece solo después de iniciar sesión y tocar el nombre) -->
+            <ul class="menu-opciones" id="menuOpciones">
+                <li id="cerrarSesion">Cerrar sesión</li>
+              <li id="abrirLauncher">Abrir Launcher</li>
+            </ul>
+          
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Bienvenidos a Erik</h2>
+            <p>Tu aliado en soluciones informáticas modernas y confiables.</p>
+        </section>
+    
+    
+    </main>
+ <main>
+  <section>
+    <h2>Nueva función: Tarjetas de regalo Erik Pay</h2>
+    <p>¡Nos emociona anunciar el lanzamiento de las tarjetas de regalo <strong>Erik Pay</strong>! Estas tarjetas pueden usarse en todas nuestras apps, juegos y productos, incluyendo la exclusiva <strong>Erik Card</strong> (solo para móviles).</p>
+    <ul>
+      <li><strong>Multiplataforma:</strong> Utilízalas en todos nuestros servicios digitales.</li>
+      <li><strong>Versátiles:</strong> Funcionan como dinero real que incluso puedes extraer.</li>
+      <li><strong>Sencillas y efectivas:</strong> Compra, regala y usa con libertad.</li>
+    </ul>
+    <p>Descubre la presentación completa con todos los detalles:</p>
+    <p>
+      -
+    </p>
+    <div style="margin-top: 1rem;">
+      <a href="https://docs.google.com/presentation/d/18DC3Bm1a-gixnNSLWvxLL6zhjXRR-Ufjfa8X5Igf2fc/edit?usp=sharing" target="_blank" style="background-color: #0077ff; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">Ver Presentación</a>
+    </div>
+    <h>
+       -
+    </h>
+    <div style="margin-top: 1rem;">
+      <a href="Targetas de regalo Erik Pay.pdf" download style="background-color: #28a745; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">Descargar PDF</a>
+    </div>
+  </section>
+</main>
+
+    <footer>
+        <p>&copy; 2024 Erik. Todos los derechos reservados.</p>
+    </footer>
+      <script>
+    // Obtener el parámetro 'name' de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombreUsuarioURL = urlParams.get('name');
+
+    // Elementos del DOM
+    const iniciarSesionBtn = document.getElementById('iniciarSesionBtn');
+          const abrirLauncher = document.getElementById('abrirLauncher');
+    const perfilUsuario = document.getElementById('perfilUsuario');
+    const nombreUsuario = document.getElementById('nombreUsuario');
+    const menuOpciones = document.getElementById('menuOpciones');
+    const cerrarSesion = document.getElementById('cerrarSesion');
+
+    // Verificar si ya hay un nombre de usuario en el sessionStorage
+    const nombreGuardado = sessionStorage.getItem('nombreUsuario');
+
+    if (nombreGuardado) {
+        // Si hay un nombre en el sessionStorage, mostrar la interfaz de usuario
+        mostrarPerfil(nombreGuardado);
+    } else if (nombreUsuarioURL) {
+        // Si hay un nombre en la URL, guardarlo en sessionStorage y mostrarlo
+        sessionStorage.setItem('nombreUsuario', nombreUsuarioURL);
+        mostrarPerfil(nombreUsuarioURL);
+    }
+
+    // Función que muestra la alerta de inicio de sesión
+    iniciarSesionBtn.addEventListener('click', function() {
+        // Redirigir a la página de inicio de sesión
+        window.location.href = 'https://erikaccount.glitch.me/logins/erik.html';
+    });
+
+        // la funcion del launcher
+            abrirLauncher.addEventListener('click', function() {
+        // Redirigir a la página de inicio de sesión
+        window.location.href = 'https://eriklauncher.glitch.me/';
+    });
+        
+    // Función que muestra el perfil del usuario y oculta el botón de inicio de sesión
+    function mostrarPerfil(nombre) {
+        iniciarSesionBtn.style.display = 'none'; // Ocultar el botón
+        perfilUsuario.style.display = 'flex'; // Mostrar el perfil
+        nombreUsuario.textContent = nombre; // Mostrar el nombre
+    }
+
+    // Función para mostrar/ocultar el menú de opciones cuando se toca el perfil
+    perfilUsuario.addEventListener('click', function() {
+        menuOpciones.style.display = menuOpciones.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Cerrar sesión: eliminar el nombre guardado y reiniciar la página
+    cerrarSesion.addEventListener('click', function() {
+        // Eliminar el nombre del sessionStorage
+        sessionStorage.removeItem('nombreUsuario');
+        // Redirigir a index.html sin parámetros
+        window.location.href = 'index.html';
+    });
+
+</script>
+</body>
+</html>
