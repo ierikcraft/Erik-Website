@@ -1,263 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" id="dynamic-favicon" href="https://cdn.glitch.global/289a211a-7dfc-402c-b788-4bc4da318d2d/Icono_ErikStudios-removebg-preview.png?v=1733433454883">
+    <title>Erik - Bienvenidos</title>
+    <link rel="stylesheet" href="styles.css">
+  <style>
+         .perfil {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative; /* Para posicionar el menú desplegable */
+        }
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   
+        /* Estilo del ícono de usuario */
+        .perfil img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
 
-    <!--
-      This is the page head - it contains info the browser uses
-      Like the title, which appears on the browser tab but not inside the page
-      Further down you'll see the content that displays in the page
-    -->
-    <title>Erik Domain Protect - Erik</title>
+        /* Estilo del menú desplegable */
+        .menu-opciones {
+            display: none;
+            position: right;
+            top: 50px;
+            right: 0;
+            background-color: #ADD8E6;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 10px;
+            margin-top: 10px;
+            z-index: 1;
+        }
 
-    <!-- The website stylesheet -->
-    <link rel="stylesheet" href="https://ierikcraft.github.io/Registered-domain-template/style.css" />
-<style>
+        .menu-opciones li {
+            padding: 5px;
+            cursor: pointer;
+        }
 
-  /******************************************************************************
-START Glitch hello-app default styles
+        .menu-opciones li:hover {
+            background-color: 	#B0E0E6;
+        }
+       h2 {
+      color: #0077ff;
+    }
+    .pdf-link {
+      display: block;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .pdf-link a {
+      text-decoration: none;
+      background-color: #0077ff;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .pdf-link a:hover {
+      background-color: #005fcc;
+    }
+      .abajo {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .abajo header {
+      background-color: #0077ff;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+      margin-top: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+     .ia-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f7f7f8;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin: auto;
+  }
 
-The styles in this section do some minimal CSS resets, set default fonts and 
-colors, and handle the layout for our footer and "Remix on Glitch" button. If
-you're new to CSS they may seem a little complicated, but you can scroll down
-to this section's matching END comment to see page-specific styles.
-******************************************************************************/
+  #userInput {
+    flex: 1;
+    resize: none;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #ffffff;
+    transition: border 0.2s ease-in-out;
+  }
 
+  #userInput:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  }
 
-/* 
-  The style rules specify elements by type and by attributes such as class and ID
-  Each section indicates an element or elements, then lists the style properties to apply
-  See if you can cross-reference the rules in this file with the elements in index.html
-*/
+  button {
+    padding: 10px 16px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+  }
 
-/* Our default values set as CSS variables */
-:root {
-  --color-bg: #69F7BE;
-  --color-text-main: #000000;
-  --color-text-header: #2800FF;
-  --color-primary: #FFFF00;
-  --wrapper-height: 87vh;
-  --image-max-width: 300px;
-  --image-margin: 3rem;
-  --font-family: "HK Grotesk";
-  --font-family-header: "HK Grotesk";
-}
+  button:hover {
+    background-color: #4338ca;
+  }
 
-/* Basic page style resets */
-* {
-  box-sizing: border-box;
-}
-[hidden] {
-  display: none !important;
-}
+  .gif-icon {
+    width: 50px;
+    height: 50px;
+  }
 
-/* Import fonts */
-@font-face {
-  font-family: HK Grotesk;
-  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
-    format("opentype");
-}
-@font-face {
-  font-family: HK Grotesk;
-  font-weight: bold;
-  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
-    format("opentype");
-}
-
-/* Our remix on glitch button */
-.btn--remix {
-  font-family: HK Grotesk;
-  padding: 0.75rem 1rem;
-  font-size: 1.1rem;
-  line-height: 1rem;
-  font-weight: 500;
-  height: 2.75rem;
-  align-items: center;
-  cursor: pointer;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #000;
-  white-space: nowrap;
-  margin-left: auto;
-}
-.btn--remix img {
-  margin-right: 0.5rem;
-}
-.btn--remix:hover {
-  background-color: #D0FFF1;
-}
-
-/* Navigation grid */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem auto 0;
-  padding: 1rem 0 0.75rem 0;
-  width: 100%;
-  flex-wrap: wrap;
-  border-top: 4px solid #fff;
-}
-
-.footer a:not(.btn--remix):link,
-a:not(.btn--remix):visited {
-  font-family: HK Grotesk;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1rem;
-  color: #000;
-  text-decoration: none;
-  border-style: none;
-}
-.footer a:hover {
-  background: var(--color-primary);
-}
-
-.footer .links {
-  padding: 0.5rem 1rem 1.5rem;
-  white-space: nowrap;
-}
-
-.divider {
-  padding: 0 1rem;
-}
-/******************************************************************************
-END Glitch hello-app default styles
-******************************************************************************/
-
-body {
-  font-family: HK Grotesk;
-  background-color: var(--color-bg);
-}
-
-/* Page structure */
-.wrapper {
-  min-height: var(--wrapper-height);
-  display: grid;
-  place-items: center;
-  margin: 0 1rem;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Very light scaling for our illustration */
-.title {
-  color: var(--color-text-header);
-  font-family: HK Grotesk;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 100px;
-  line-height: 105%;
-  margin: 0;
-}
-
-/* Very light scaling for our illustration */
-.illustration {
-  max-width: 100%;
-  max-height: var(--image-max-width);
-  margin-top: var(--image-margin);
-}
-
-/* Instructions */
-.instructions {
-  margin: 1rem auto 0;
-}
-
-/* Button - Add it from the README instructions */
-button,
-input {
-  font-family: inherit;
-  font-size: 100%;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  transition: 500ms;
-}
-
-/* Subheading */
-h2 {
-  color: var(--color-text-header);
-}
-
-/* Interactive image */
-.illustration:active {
-  transform: translateY(5px);
-}
-
-/* Button dip
-- Toggling this class on and off will move it down and up again
-- The button transition property above determines the speed of the translate (500ms)
-*/
-.dipped {
-  transform: translateY(5px);
-}
-
-/* Links that open files in the editor */
-.fileopener {
-  cursor:pointer;
-  font-weight:bold;
-  border-bottom:3px solid var(--color-primary);
-  color: var(--color-secondary);
-}
-.fileopener:hover {
-  border-bottom:3px solid var(--color-secondary);
-}
-
-</style>
-   
-  </head>
-  <body>
-    <!--
-      The body includes the content you see in the page
-      Each element is defined using tags, like this <div></div>
-      The attributes like class="wrapper" let us style elements in the CSS
-    -->
-    <div class="wrapper">
-      <div class="content" role="main">
-        <h1 class="title">This domain is protected</h1>
-        <img
-          src="https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2Fillustration.svg?v=1618177344016"
-          class="illustration"
-          alt="Editor illustration"
-          title="Click the image!"
-        />
-        <div class="instructions">
-          <h2>This is the Erik oficial website, it is in developing, but it has been locked de domain for nobody takes it...</h2>
-          <p>
-           Thank you, Erik Inc
-          </p>
-          <!--  🚧 TODO: ADD BUTTON HERE -->
-
-          <!-- Once you've added the button from TODO.md, click it in the page -->
-          <!-- Check out the function in script.js to see how it works -->
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://cdn.glitch.global/289a211a-7dfc-402c-b788-4bc4da318d2d/Icono_ErikStudios-removebg-preview.png?v=1733433454883" alt="Logo de Erik">
+            <h1>Erik</h1>
         </div>
-      </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="about.html">Quiénes somos</a></li>
+                   <button class="iniciar-sesion" id="iniciarSesionBtn">Iniciar sesión</button>
+          <div class="perfil" id="perfilUsuario" style="display:none;">
+            <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Icono de usuario">
+            <span id="nombreUsuario"></span>
+
+            <!-- Menú desplegable (aparece solo después de iniciar sesión y tocar el nombre) -->
+            <ul class="menu-opciones" id="menuOpciones">
+                <li id="cerrarSesion">Cerrar sesión</li>
+              <li id="abrirLauncher">Abrir Launcher</li>
+            </ul>
+          
+            </ul>
+        </nav>
+    </header>
+        
+  <div class="ia-box">
+        <img src="https://cdn.glitch.global/647fd858-f0a6-4652-b1c7-40ab5ea1e6bc/erik-ia-animation-more-visual-unscreen.gif?v=1744748575452" class="gif-icon" alt="Erik AI">
+        <textarea id="userInput" placeholder="Busca algo o preguntale a Erik AI" rows="1" cols="50"></textarea>
+        <button onclick="sendChat()">Send</button>
+        <div id="responseContainer"></div>
     </div>
-    <!-- The footer holds our remix button — you can keep or delete it ✂ -->
-    <footer class="footer">
-      <div class="links"></div>
-      <a
-        class="btn--remix"
-        target="_top"
-        href="https://github.com/ierikcraft"
-      >
-       Erik developer profile
-      </a>
+
+    <main>
+      
+        <section class="welcome">
+            <h2>Bienvenidos a Erik</h2>
+            <p>Tu aliado en soluciones informáticas modernas y confiables.</p>
+        </section>
+    
+    
+    </main>
+ <main>
+  <section>
+    <h2>Nueva función: Tarjetas de regalo Erik Pay</h2>
+    <p>¡Nos emociona anunciar el lanzamiento de las tarjetas de regalo <strong>Erik Pay</strong>! Estas tarjetas pueden usarse en todas nuestras apps, juegos y productos, incluyendo la exclusiva <strong>Erik Card</strong> (solo para móviles).</p>
+    <ul>
+      <li><strong>Multiplataforma:</strong> Utilízalas en todos nuestros servicios digitales.</li>
+      <li><strong>Versátiles:</strong> Funcionan como dinero real que incluso puedes extraer.</li>
+      <li><strong>Sencillas y efectivas:</strong> Compra, regala y usa con libertad.</li>
+    </ul>
+    <p>Descubre la presentación completa con todos los detalles:</p>
+    <p>
+      -
+    </p>
+    <div style="margin-top: 1rem;">
+      <a href="https://docs.google.com/presentation/d/18DC3Bm1a-gixnNSLWvxLL6zhjXRR-Ufjfa8X5Igf2fc/edit?usp=sharing" target="_blank" style="background-color: #0077ff; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">Ver Presentación</a>
+    </div>
+    <h>
+       -
+    </h>
+    <div style="margin-top: 1rem;">
+      <a href="Targetas de regalo Erik Pay.pdf" download style="background-color: #28a745; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">Descargar PDF</a>
+    </div>
+  </section>
+</main>
+
+    <footer>
+        <p>&copy; 2024 Erik. Todos los derechos reservados.</p>
     </footer>
-  </body>
+      <script>
+    // Obtener el parámetro 'name' de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombreUsuarioURL = urlParams.get('name');
+
+    // Elementos del DOM
+    const iniciarSesionBtn = document.getElementById('iniciarSesionBtn');
+          const abrirLauncher = document.getElementById('abrirLauncher');
+    const perfilUsuario = document.getElementById('perfilUsuario');
+    const nombreUsuario = document.getElementById('nombreUsuario');
+    const menuOpciones = document.getElementById('menuOpciones');
+    const cerrarSesion = document.getElementById('cerrarSesion');
+
+    // Verificar si ya hay un nombre de usuario en el sessionStorage
+    const nombreGuardado = sessionStorage.getItem('nombreUsuario');
+
+    if (nombreGuardado) {
+        // Si hay un nombre en el sessionStorage, mostrar la interfaz de usuario
+        mostrarPerfil(nombreGuardado);
+    } else if (nombreUsuarioURL) {
+        // Si hay un nombre en la URL, guardarlo en sessionStorage y mostrarlo
+        sessionStorage.setItem('nombreUsuario', nombreUsuarioURL);
+        mostrarPerfil(nombreUsuarioURL);
+    }
+
+    // Función que muestra la alerta de inicio de sesión
+    iniciarSesionBtn.addEventListener('click', function() {
+        // Redirigir a la página de inicio de sesión
+        window.location.href = 'https://erikaccount.glitch.me/logins/erik.html';
+    });
+
+        // la funcion del launcher
+            abrirLauncher.addEventListener('click', function() {
+        // Redirigir a la página de inicio de sesión
+        window.location.href = 'https://eriklauncher.glitch.me/';
+    });
+        
+    // Función que muestra el perfil del usuario y oculta el botón de inicio de sesión
+    function mostrarPerfil(nombre) {
+        iniciarSesionBtn.style.display = 'none'; // Ocultar el botón
+        perfilUsuario.style.display = 'flex'; // Mostrar el perfil
+        nombreUsuario.textContent = nombre; // Mostrar el nombre
+    }
+
+    // Función para mostrar/ocultar el menú de opciones cuando se toca el perfil
+    perfilUsuario.addEventListener('click', function() {
+        menuOpciones.style.display = menuOpciones.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Cerrar sesión: eliminar el nombre guardado y reiniciar la página
+    cerrarSesion.addEventListener('click', function() {
+        // Eliminar el nombre del sessionStorage
+        sessionStorage.removeItem('nombreUsuario');
+        // Redirigir a index.html sin parámetros
+        window.location.href = 'index.html';
+    });
+
+</script>
+        <script>
+        const responseContainer = document.getElementById('responseContainer');
+
+        async function sendChat() {
+            const userInput = document.getElementById('userInput').value;
+            if (!userInput.trim()) {
+                alert('Please type a message.');
+                return;
+            }
+
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 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'  // Replace YOUR_API_KEY with your actual OpenAI API key
+                },
+                body: JSON.stringify({
+                    model: "gpt-4", // or use another model like gpt-3.5-turbo
+                    messages: [{role: "user", content: userInput}]
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                displayError(`Failed to fetch response: ${data.error?.message || 'Unknown error'}`);
+                return;
+            }
+            console.log(data);
+            displayResponse(data.choices[0].message.content);
+        }
+
+        function displayResponse(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = "Erik Bolt: " + message;
+            responseContainer.appendChild(messageDiv);
+        }
+
+        function displayError(error) {
+            const errorDiv = document.createElement('div');
+            errorDiv.textContent = error;
+            errorDiv.style.color = 'red';
+            responseContainer.appendChild(errorDiv);
+        }
+    </script>
+</body>
 </html>
